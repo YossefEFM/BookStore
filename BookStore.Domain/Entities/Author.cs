@@ -1,15 +1,63 @@
-﻿using System.Collections.Generic;
+﻿using BookStore.Domain.Exceptions;
 
-namespace BookStore.Domain.Entities
+namespace BookStore.Domain.Entities;
+
+public class Author
 {
-    public class Author
-    {
-        public int Id { get; set; } // المعرف الفريد للمؤلف
-        public string Name { get; set; } // اسم المؤلف
-        public string Bio { get; set; } // نبذة عن المؤلف
+    public int Id { get; private set; }
 
-        // الـ Navigation Property:
-        // بنقول لـ Entity Framework إن المؤلف الواحد عنده قائمة (Collection) من الكتب
-        public ICollection<Book> Books { get; set; } = new List<Book>();
+public string Name { get; private set; } = string.Empty;
+
+    public string Bio { get; private set; } = string.Empty;
+
+    public ICollection<Book> Books { get; private set; } = new List<Book>();
+
+    private Author()
+    {
+        // Required by EF Core
     }
+
+    public Author(string name, string bio)
+    {
+        SetName(name);
+        SetBio(bio);
+    }
+
+    public void Update(string name, string bio)
+    {
+        SetName(name);
+        SetBio(bio);
+    }
+
+    private void SetName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new DomainException("Author name is required.");
+        }
+
+        if (name.Trim().Length > 150)
+        {
+            throw new DomainException("Author name cannot exceed 150 characters.");
+        }
+
+        Name = name.Trim();
+    }
+
+    private void SetBio(string bio)
+    {
+        if (string.IsNullOrWhiteSpace(bio))
+        {
+            throw new DomainException("Author bio is required.");
+        }
+
+        if (bio.Trim().Length > 2000)
+        {
+            throw new DomainException("Author bio cannot exceed 2000 characters.");
+        }
+
+        Bio = bio.Trim();
+    }
+
+
 }

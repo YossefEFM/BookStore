@@ -1,14 +1,44 @@
-﻿using System.Collections.Generic;
+﻿using BookStore.Domain.Exceptions;
 
-namespace BookStore.Domain.Entities
+namespace BookStore.Domain.Entities;
+
+public class Category
 {
-    public class Category
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } // اسم القسم (مثلاً: رعب، تكنولوجيا)
+    public int Id { get; private set; }
 
-        // الـ Navigation Property:
-        // القسم الواحد (زي الرعب مثلاً) جواه قائمة من الكتب الكثيرة تنتمي للقسم ده
-        public ICollection<Book> Books { get; set; } = new List<Book>();
+public string Name { get; private set; } = string.Empty;
+
+    public ICollection<Book> Books { get; private set; } = new List<Book>();
+
+    private Category()
+    {
+        // Required by EF Core
     }
+
+    public Category(string name)
+    {
+        SetName(name);
+    }
+
+    public void Update(string name)
+    {
+        SetName(name);
+    }
+
+    private void SetName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new DomainException("Category name is required.");
+        }
+
+        if (name.Trim().Length > 100)
+        {
+            throw new DomainException("Category name cannot exceed 100 characters.");
+        }
+
+        Name = name.Trim();
+    }
+
+
 }
