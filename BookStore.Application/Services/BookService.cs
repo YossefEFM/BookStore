@@ -1,5 +1,6 @@
 using BookStore.Application.DTOs.Book;
 using BookStore.Application.Interfaces;
+using BookStore.Application.Specifications;
 using BookStore.Domain.Entities;
 
 namespace BookStore.Application.Services;
@@ -15,16 +16,26 @@ public BookService(IUnitOfWork unitOfWork)
 
     public async Task<IReadOnlyList<BookDto>> GetAllBooksAsync()
     {
-        var books = await _unitOfWork.Repository<Book>().GetAllAsync();
+        var specification = new BooksWithDetailsSpecification();
+
+        var books = await _unitOfWork
+            .Repository<Book>()
+            .GetAllWithSpecAsync(specification);
 
         return books.Select(MapToDto).ToList();
     }
 
     public async Task<BookDto?> GetBookByIdAsync(int id)
     {
-        var book = await _unitOfWork.Repository<Book>().GetByIdAsync(id);
+        var specification = new BooksWithDetailsSpecification(id);
 
-        return book is null ? null : MapToDto(book);
+        var book = await _unitOfWork
+            .Repository<Book>()
+            .GetWithSpecAsync(specification);
+
+        return book is null
+            ? null
+            : MapToDto(book);
     }
 
     public async Task<BookDto> CreateBookAsync(CreateBook model)
@@ -45,7 +56,9 @@ public BookService(IUnitOfWork unitOfWork)
 
     public async Task<bool> UpdateBookAsync(int id, CreateBook model)
     {
-        var book = await _unitOfWork.Repository<Book>().GetByIdAsync(id);
+        var book = await _unitOfWork
+            .Repository<Book>()
+            .GetByIdAsync(id);
 
         if (book is null)
         {
@@ -61,6 +74,7 @@ public BookService(IUnitOfWork unitOfWork)
             model.PublishingHouseId);
 
         _unitOfWork.Repository<Book>().Update(book);
+
         await _unitOfWork.CompleteAsync();
 
         return true;
@@ -68,7 +82,9 @@ public BookService(IUnitOfWork unitOfWork)
 
     public async Task<bool> DeleteBookAsync(int id)
     {
-        var book = await _unitOfWork.Repository<Book>().GetByIdAsync(id);
+        var book = await _unitOfWork
+            .Repository<Book>()
+            .GetByIdAsync(id);
 
         if (book is null)
         {
@@ -76,6 +92,7 @@ public BookService(IUnitOfWork unitOfWork)
         }
 
         _unitOfWork.Repository<Book>().Delete(book);
+
         await _unitOfWork.CompleteAsync();
 
         return true;
@@ -89,8 +106,15 @@ public BookService(IUnitOfWork unitOfWork)
             Title = book.Title,
             Description = book.Description,
             Price = book.Price,
+
             AuthorId = book.AuthorId,
-            CategoryId = book.CategoryId
+            AuthorName = book.Author?.Name ?? string.Empty,
+
+            CategoryId = book.CategoryId,
+            CategoryName = book.Category?.Name ?? string.Empty,
+
+            PublishingHouseId = book.PublishingHouseId,
+            PublishingHouseName = book.PublishingHouse?.Name ?? string.Empty
         };
     }
 

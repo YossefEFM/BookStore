@@ -1,14 +1,23 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using BookStore.Application.Specifications;
 
-namespace BookStore.Application.Interfaces
+namespace BookStore.Application.Interfaces;
+
+public interface IGenericRepository<T> where T : class
 {
-    public interface IGenericRepository<T> where T : class
-    {
-        Task<T> GetByIdAsync(int id);
-        Task<IReadOnlyList<T>> GetAllAsync();
-        Task AddAsync(T entity);
-        void Update(T entity);
-        void Delete(T entity);
-    }
+    Task<T?> GetByIdAsync(int id);
+
+
+Task<IReadOnlyList<T>> GetAllAsync();
+
+    Task AddAsync(T entity);
+
+    void Update(T entity);
+
+    void Delete(T entity);
+
+    Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISpecification<T> spec);
+
+    Task<T?> GetWithSpecAsync(ISpecification<T> spec);
+
+
 }
