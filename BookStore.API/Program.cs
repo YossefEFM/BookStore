@@ -1,16 +1,35 @@
+using BookStore.API.Middleware;
+using BookStore.Application.DependencyInjection;
+using BookStore.Application.Validators;
 using BookStore.Infrastructure.DependencyInjection;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using BookStore.Application.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// DbContext + Identity + Repositories + UnitOfWork + AuthService
+// =======================
+// Dependency Injection
+// =======================
+
 builder.Services.AddInfrastructureServices(builder.Configuration);
+
 builder.Services.AddApplicationServices();
 
-// JWT Authentication Configuration
+// =======================
+// FluentValidation
+// =======================
+
+builder.Services.AddFluentValidationAutoValidation();
+
+builder.Services.AddValidatorsFromAssemblyContaining<CreateBookValidator>();
+
+// =======================
+// Authentication
+// =======================
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -20,6 +39,8 @@ builder.Services.AddAuthentication(options =>
 {
     options.RequireHttpsMetadata = false;
     options.SaveToken = false;
+
+
 options.TokenValidationParameters = new TokenValidationParameters
 {
     ValidateIssuerSigningKey = true,
@@ -37,11 +58,27 @@ options.TokenValidationParameters = new TokenValidationParameters
 
 });
 
+// =======================
+// MVC
+// =======================
+
 builder.Services.AddControllers();
+
+builder.Services.AddProblemDetails();
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
+// =======================
+// Build
+// =======================
+
 var app = builder.Build();
+
+// =======================
+// Middleware Pipeline
+// =======================
 
 if (app.Environment.IsDevelopment())
 {
@@ -49,9 +86,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseGlobalExceptionHandling();
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();
