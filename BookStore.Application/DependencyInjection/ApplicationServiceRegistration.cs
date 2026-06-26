@@ -11,7 +11,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IBookService, BookService>();
 
 
-    return services;
+    services.AddScoped<IAuthService, AuthService>();
+
+        return services;
     }
 
 
