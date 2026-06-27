@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "E:\\DotNet\\BookStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|e:\\dotnet\\bookstore\\bookstore.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|solutionrelative:bookstore.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{36F837BB-68F3-A90B-B140-61B061114DE7}|BookStore.API\\BookStore.API.csproj|e:\\dotnet\\bookstore\\bookstore.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36F837BB-68F3-A90B-B140-61B061114DE7}|BookStore.API\\BookStore.API.csproj|solutionrelative:bookstore.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F837BB-68F3-A90B-B140-61B061114DE7}|BookStore.API\\BookStore.API.csproj|e:\\dotnet\\bookstore\\bookstore.api\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F837BB-68F3-A90B-B140-61B061114DE7}|BookStore.API\\BookStore.API.csproj|solutionrelative:bookstore.api\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|e:\\dotnet\\bookstore\\bookstore.application\\validators\\logindtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|solutionrelative:bookstore.application\\validators\\logindtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|e:\\dotnet\\bookstore\\bookstore.application\\validators\\registerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|solutionrelative:bookstore.application\\validators\\registerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|e:\\dotnet\\bookstore\\bookstore.application\\validators\\createbookvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|solutionrelative:bookstore.application\\validators\\createbookvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|e:\\dotnet\\bookstore\\bookstore.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36D723C3-7AB6-F7A0-9830-06BF19C4F2DA}|BookStore.Application\\BookStore.Application.csproj|solutionrelative:bookstore.application\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +42,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.API\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "BookStore.API\\Controllers\\BooksController.cs",
+              "ToolTip": "E:\\DotNet\\BookStore\\BookStore.API\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "BookStore.API\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T11:59:27.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginDtoValidator.cs",
+              "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.Application\\Validators\\LoginDtoValidator.cs",
+              "RelativeDocumentMoniker": "BookStore.Application\\Validators\\LoginDtoValidator.cs",
+              "ToolTip": "E:\\DotNet\\BookStore\\BookStore.Application\\Validators\\LoginDtoValidator.cs",
+              "RelativeToolTip": "BookStore.Application\\Validators\\LoginDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T11:53:17.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterDtoValidator.cs",
+              "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.Application\\Validators\\RegisterDtoValidator.cs",
+              "RelativeDocumentMoniker": "BookStore.Application\\Validators\\RegisterDtoValidator.cs",
+              "ToolTip": "E:\\DotNet\\BookStore\\BookStore.Application\\Validators\\RegisterDtoValidator.cs",
+              "RelativeToolTip": "BookStore.Application\\Validators\\RegisterDtoValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T11:52:40.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.API\\Program.cs",
+              "RelativeDocumentMoniker": "BookStore.API\\Program.cs",
+              "ToolTip": "E:\\DotNet\\BookStore\\BookStore.API\\Program.cs",
+              "RelativeToolTip": "BookStore.API\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T08:48:08.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateBookValidator.cs",
+              "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.Application\\Validators\\CreateBookValidator.cs",
+              "RelativeDocumentMoniker": "BookStore.Application\\Validators\\CreateBookValidator.cs",
+              "ToolTip": "E:\\DotNet\\BookStore\\BookStore.Application\\Validators\\CreateBookValidator.cs",
+              "RelativeToolTip": "BookStore.Application\\Validators\\CreateBookValidator.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T11:51:50.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "BookService.cs",
               "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.Application\\Services\\BookService.cs",
               "RelativeDocumentMoniker": "BookStore.Application\\Services\\BookService.cs",
@@ -35,19 +116,6 @@
               "ViewState": "AgIAACkAAAAAAAAAAAAcwDYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T09:11:01.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\DotNet\\BookStore\\BookStore.API\\Program.cs",
-              "RelativeDocumentMoniker": "BookStore.API\\Program.cs",
-              "ToolTip": "E:\\DotNet\\BookStore\\BookStore.API\\Program.cs",
-              "RelativeToolTip": "BookStore.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T08:48:08.799Z",
               "EditorCaption": ""
             }
           ]
